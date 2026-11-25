@@ -1,0 +1,83 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+/* Input and button share one border, so the control reads as a single block. */
+.group {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  overflow: hidden;
+  transition: border-color 0.2s;
+
+  &:focus-within {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+}
+
+.input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 13px 16px;
+  border: 0;
+  background: transparent;
+  color: var(--text-h);
+  font: inherit;
+  font-size: 16px;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.groupError {
+  border-color: var(--danger);
+}
+
+.input::placeholder {
+  color: var(--text);
+  opacity: 1;
+}
+
+.submit {
+  flex: 0 0 auto;
+  min-width: 8.5rem;
+  padding: 13px 24px;
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition:
+    filter 0.2s,
+    opacity 0.2s;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.12);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: -4px;
+  }
+
+  &:disabled {
+    cursor: progress;
+    opacity: 0.7;
+  }
+}
+
+.error {
+  color: var(--danger);
+  font-size: 14px;
+}

@@ -1,0 +1,30 @@
+.footer {
+  border-top: 1px solid var(--border);
+  text-align: left;
+}
+
+.legal {
+  padding: 16px 32px 24px;
+  font-size: 14px;
+
+  @media (max-width: 1024px) {
+    padding: 16px 20px 20px;
+  }
+}
+
+.link {
+  color: var(--text-h);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-bottom-color: var(--accent-border);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
